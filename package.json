@@ -1,6 +1,6 @@
 {
   "name": "@terminus/tslint-config-frontend",
-  "version": "0.0.1",
+  "version": "0.0.0-PLACEHOLDER",
   "description": "Terminus TSLint configurations.",
   "homepage": "https://github.com/GetTerminus/tslint-config-frontend",
   "keywords": [
