@@ -22,6 +22,10 @@ module.exports = {
       'error',
       2,
     ],
+    'object-curly-newline': [
+      'error',
+      'always',
+    ],
     'quotes': [
       'error',
       'single',

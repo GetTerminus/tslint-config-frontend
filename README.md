@@ -1,94 +1,168 @@
-// TODO: Update readme to tslint specific
-// TODO: Update readme to tslint specific
-// TODO: Update readme to tslint specific
-// TODO: Update readme to tslint specific
+<h1>Terminus TSLint Frontend Configuration</h1>
 
-# Terminus lint Configurations
+A collection of TypeScript & Angular lint rules for Terminus frontend codebases.
 
-A collection of extendable lint configurations created for Terminus.
+> For ESLint configuration, see: https://github.com/GetTerminus/eslint-config-frontend
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Installation](#installation)
+- [Rulesets overview](#rulesets-overview)
+- [Set up](#set-up)
+  - [CI](#ci)
+  - [Development](#development)
+  - [Testing](#testing)
+- [Rule Decisions](#rule-decisions)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## Installation
 
-1. Install the NPM package:
-
 ```
-$ yarn add @terminus/frontend-lint-config -D
+$ yarn add tslint @terminus/tslint-config-frontend -D
 ```
 
-2. Extend this package in your project:
+## Rulesets overview
 
+There are 3 rulesets defined for TSLint:
+
+1. **[CI](#CI)**: This is the default ruleset. This is meant to be used during your CI builds so it throws hard errors when issues are
+   found.
+2. **[Development](#Development)**: This enforces all the same rules as the CI ruleset but infractions are reported as warnings rather than
+   errors.
+3. **[Testing](#Testing)**: This ruleset extends the development ruleset and then further disables certain tests that make writing spec
+   files less arduous (`no-non-null-assertion`, component naming requirements, etc).
+
+
+## Set up
+
+You will need to set up separate configs and scripts for each ruleset: `ci`, `development` and `testing`. Creating a custom script call for
+each within your `package.json` will allow for easy composability of commands once all linters are set up.
+
+### CI
+
+[`CI Rules`](./ci.js)
+
+#### 1. Create the file and extend our ruleset
+
+Create a TSLint config file at the root level named `tslint.ci.json` and extend the base ruleset:
+
+```json
+{
+  "extends": "@terminus/tslint-config-frontend"
+}
 ```
-// your project's .eslintrc.js
-module.exports = {
-  extends: ["@terminus/frontend-lint-config"],
-  parserOptions: {
-    ecmaVersion: 6,
-    // This should point to your primary tsconfig.json
-    project: "./tsconfig.json",
-    sourceType: "module"
+
+> Linting during the CI process is the most strict and will fail if _any_ issues are found. The only way a linting issue makes it to CI is
+> because someone didn't lint before commiting.
+
+#### 2. Add a linting command to `package.json`
+
+- The `--project` flag reference should point to the primary app `tsconfig` file.
+- The `--config` flag reference should point to the ci `tslint` file.
+
+```json
+{
+  "name": "My Project",
+  "scripts": {
+    "lint:tslint:ci": "npx tslint --project ./src/tsconfig.app.json --config ./tslint.ci.json"
   }
 }
 ```
 
 
-## Configurations
-
-Available configurations:
-
-### `ci`
-
-The default ruleset is the strictest and best suited to be run during CI process'. Even stylistic issues are marked as errors because the
-only way the issue has made it all the way to CI is because someone did not run the linter during development.
-
-[`ci.js src`](./ci.js)
-
-
-### `development`
+### Development
 
 This ruleset extends the `ci` ruleset but softens the rules to turn many stylistic issues into warnings in order to not impede development.
 
-Target the `development` ruleset:
+[`Development Rules`](./development.js)
 
+#### 1. Create the file and extend our ruleset
+
+Create a TSLint config file at the root level named `tslint.json` and extend the development ruleset:
+
+```json
+{
+  "extends": "@terminus/tslint-config-frontend/development"
+}
 ```
-// your project's .eslintrc.js
-module.exports = {
-  extends: ["@terminus/frontend-lint-config/development"],
-  parserOptions: {
-    ecmaVersion: 6,
-    // This should point to your primary tsconfig.json
-    project: "./tsconfig.json",
-    sourceType: "module"
+
+#### 2. Add project specific rules
+
+> NOTE: When adjusting a TSLint rule, the _entire_ rule must be defined again.
+
+```json
+{
+  "extends": "@terminus/tslint-config-frontend/development",
+  "rules": {
+    "component-selector": [
+      true,
+      "element",
+      "foo",
+      "kebab-case"
+    ],
+    "directive-selector": [
+      true,
+      "attribute",
+      "foo",
+      "camelCase"
+    ],
+    "pipe-prefix": [
+      true,
+      "foo"
+    ]
   }
 }
 ```
 
-[`development.js src`](./development.js)
+#### 3. Add a linting command to `package.json`
 
+After the `--project` flag, the reference should point to your primary app `tsconfig` file.
 
-### `testing`
-
-This ruleset extends the `development` ruleset but softens the rules further to allow more freedom in `spec` files.
-
-Target the `testing` ruleset:
-
-```
-// your project's .eslintrc.js
-module.exports = {
-  extends: ["@terminus/frontend-lint-config/testing"],
-  parserOptions: {
-    ecmaVersion: 6,
-    // This should point to your primary tsconfig.json
-    project: "./tsconfig.json",
-    sourceType: "module"
+```json
+{
+  "name": "My Project",
+  "scripts": {
+    "lint:tslint": "npx tslint --project ./src/tsconfig.app.json"
   }
 }
 ```
 
-[`testing.js src`](./testing.js)
+
+### Testing
+
+[`Testing Rules`](./testing.js)
+
+#### 1. Create the file and extend our ruleset
+
+Create a TSLint config file at the root level named `tslint.spec.json` and extend the testing ruleset:
+
+```json
+{
+  "extends": "@terminus/tslint-config-frontend/testing"
+}
+```
+
+#### 2. Add a linting command to `package.json`
+
+- The `--project` flag reference should point to the spec `tsconfig` file.
+- The `--config` flag reference should point to the spec `tslint` file.
+
+```json
+{
+  "name": "My Project",
+  "scripts": {
+    "lint:tslint:spec": "npx tslint --project ./src/tsconfig.spec.json --config ./tslint.spec.json"
+  }
+}
+```
 
 
-## Reasoning
+## Rule Decisions
 
 Each rule is accompanied by a comment outlining the reasoning behind the decision to include the rule.
 

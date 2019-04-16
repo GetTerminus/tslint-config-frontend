@@ -33,5 +33,8 @@ module.exports = {
 
     // Don't force trackBy in test components
     'template-use-track-by-function': true,
+
+    // Selectors are rarely needed for test host components
+    'use-component-selector': true,
   },
 };

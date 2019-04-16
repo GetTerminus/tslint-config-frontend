@@ -257,9 +257,9 @@ module.exports = {
 
     // Consistent conventions make it easy to quickly identify and reference assets of different types.
     // #codelyzer
+    // No prefix is enforced at the base level. This should be set specifically by consumers.
     'pipe-prefix': [
       true,
-      // No prefix is enforced at the base level. This should be set specifically by consumers.
       '',
     ],
 
