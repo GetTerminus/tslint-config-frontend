@@ -1,3 +1,10 @@
+## <small>1.0.2 (2019-04-17)</small>
+
+* fix: move peer deps to primary deps ([3712859](https://github.com/GetTerminus/tslint-config-frontend/commit/3712859))
+* Replace master with release branches for badges ([2352a2b](https://github.com/GetTerminus/tslint-config-frontend/commit/2352a2b))
+* Merge pull request #2 from GetTerminus/add-badges ([023955b](https://github.com/GetTerminus/tslint-config-frontend/commit/023955b)), closes [#2](https://github.com/GetTerminus/tslint-config-frontend/issues/2)
+* chore: add badges to readme ([133543e](https://github.com/GetTerminus/tslint-config-frontend/commit/133543e))
+
 ## <small>1.0.1 (2019-04-16)</small>
 
 * Merge pull request #1 from GetTerminus/update-version ([43aa126](https://github.com/GetTerminus/tslint-config-frontend/commit/43aa126)), closes [#1](https://github.com/GetTerminus/tslint-config-frontend/issues/1)
