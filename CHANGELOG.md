@@ -1,3 +1,7 @@
+## <small>1.0.3 (2019-04-30)</small>
+
+* fix: rule updates after integrating into UI library ([82300b6](https://github.com/GetTerminus/tslint-config-frontend/commit/82300b6))
+
 ## <small>1.0.2 (2019-04-17)</small>
 
 * fix: move peer deps to primary deps ([3712859](https://github.com/GetTerminus/tslint-config-frontend/commit/3712859))
