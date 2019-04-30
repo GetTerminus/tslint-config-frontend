@@ -16,6 +16,9 @@ module.exports = {
     'no-any': false,
     'no-unsafe-any': false,
 
+    // Allow lifecycle methods to be manually triggered
+    'no-lifecycle-call': false,
+
     // This allows easy access to private properties in tests
     'no-string-literal': false,
 
@@ -25,6 +28,9 @@ module.exports = {
     // Don't enforce member-access for test components
     'prefer-output-readonly': false,
 
+    // Don't require member access to be defined in test components
+    'member-access': false,
+
     // Don't enforce accessibility for test components
     'template-accessibility-alt-text': false,
     'template-accessibility-elements-content': false,
@@ -32,9 +38,9 @@ module.exports = {
     'template-accessibility-valid-aria': false,
 
     // Don't force trackBy in test components
-    'template-use-track-by-function': true,
+    'template-use-track-by-function': false,
 
     // Selectors are rarely needed for test host components
-    'use-component-selector': true,
+    'use-component-selector': false,
   },
 };
