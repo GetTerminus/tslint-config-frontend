@@ -123,16 +123,7 @@ module.exports = {
     'member-access': [
       true,
       'check-accessor',
-      'check-constructor',
-    ],
-
-    // A consistent ordering for class members can make classes easier to read, navigate, and edit.
-    // #tslint #hasFixer
-    'member-ordering': [
-      false,
-      {
-        'order': 'statics-first',
-      },
+      'check-parameter-property',
     ],
 
     // Both formats of type assertions have the same effect, but only as type assertions work in .tsx files.
