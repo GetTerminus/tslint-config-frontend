@@ -19,6 +19,9 @@ module.exports = {
     // Allow lifecycle methods to be manually triggered
     'no-lifecycle-call': false,
 
+    // Allow non-null assertions in spec files
+    'no-non-null-assertion': false,
+
     // This allows easy access to private properties in tests
     'no-string-literal': false,
 
