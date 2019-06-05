@@ -1,3 +1,8 @@
+## <small>1.0.4 (2019-06-05)</small>
+
+* fix: 🐛 spec rules now disables no-non-null-assertion ([9caa64c](https://github.com/GetTerminus/tslint-config-frontend/commit/9caa64c))
+* Add codeowners file ([9326946](https://github.com/GetTerminus/tslint-config-frontend/commit/9326946))
+
 ## <small>1.0.3 (2019-04-30)</small>
 
 * fix: rule updates after integrating into UI library ([82300b6](https://github.com/GetTerminus/tslint-config-frontend/commit/82300b6))
