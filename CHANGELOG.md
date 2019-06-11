@@ -1,3 +1,7 @@
+## <small>1.0.6 (2019-06-11)</small>
+
+* fix: 🐛 update peer dependencies for Angular 8 ([be064cd](https://github.com/GetTerminus/tslint-config-frontend/commit/be064cd))
+
 ## <small>1.0.5 (2019-06-11)</small>
 
 * fix: 🐛 update dependencies ([ab935e9](https://github.com/GetTerminus/tslint-config-frontend/commit/ab935e9))
