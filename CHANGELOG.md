@@ -1,3 +1,9 @@
+## <small>1.0.5 (2019-06-11)</small>
+
+* fix: 🐛 update dependencies ([ab935e9](https://github.com/GetTerminus/tslint-config-frontend/commit/ab935e9))
+* chore(deps): bump fstream from 1.0.11 to 1.0.12 ([4e232fc](https://github.com/GetTerminus/tslint-config-frontend/commit/4e232fc))
+* chore(deps): bump handlebars from 4.1.1 to 4.1.2 (#10) ([d64b35a](https://github.com/GetTerminus/tslint-config-frontend/commit/d64b35a)), closes [#10](https://github.com/GetTerminus/tslint-config-frontend/issues/10)
+
 ## <small>1.0.4 (2019-06-05)</small>
 
 * fix: 🐛 spec rules now disables no-non-null-assertion ([9caa64c](https://github.com/GetTerminus/tslint-config-frontend/commit/9caa64c))
