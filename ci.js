@@ -315,12 +315,6 @@ module.exports = {
     // #codelyzer
     'template-no-distracting-elements': true,
 
-    // Angular’s async pipes emit null initially, prior to the observable emitting any values, or the promise resolving. This can cause
-    // negations, like *ngIf=”!(myConditional | async)” to thrash the layout and cause expensive side-effects like firing off XHR requests
-    // for a component which should not be shown.
-    // #codelyzer
-    'template-no-negated-async': true,
-
     // The use of ‘trackBy’ is considered a good practice and is better for performance.
     // #codelyzer
     'template-use-track-by-function': true,
