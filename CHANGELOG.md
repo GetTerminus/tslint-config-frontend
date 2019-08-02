@@ -1,3 +1,8 @@
+## <small>1.0.7 (2019-08-02)</small>
+
+* fix: 🐛 no-negated-async template rule removed ([e2d13e8](https://github.com/GetTerminus/tslint-config-frontend/commit/e2d13e8)), closes [#26](https://github.com/GetTerminus/tslint-config-frontend/issues/26)
+* chore(deps): bump lodash from 4.17.11 to 4.17.14 ([c035b1a](https://github.com/GetTerminus/tslint-config-frontend/commit/c035b1a))
+
 ## <small>1.0.6 (2019-06-11)</small>
 
 * fix: 🐛 update peer dependencies for Angular 8 ([be064cd](https://github.com/GetTerminus/tslint-config-frontend/commit/be064cd))
