@@ -28,6 +28,8 @@ A collection of TypeScript & Angular lint rules for Terminus frontend codebases.
 
 ## Installation
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/GetTerminus/tslint-config-frontend.svg)](https://greenkeeper.io/)
+
 ```
 $ yarn add tslint @terminus/tslint-config-frontend -D
 ```
