@@ -5,6 +5,7 @@
 [![MIT License][license-image]][license-url]
 [![NPM version][npm-version-image]][npm-url]
 [![Github release][gh-release-badge]][gh-releases]
+[![Greenkeeper badge][greenkeeper-badge]][greenkeeper-url]
 
 A collection of TypeScript & Angular lint rules for Terminus frontend codebases.
 
@@ -28,7 +29,6 @@ A collection of TypeScript & Angular lint rules for Terminus frontend codebases.
 
 ## Installation
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/GetTerminus/tslint-config-frontend.svg)](https://greenkeeper.io/)
 
 ```
 $ yarn add tslint @terminus/tslint-config-frontend -D
@@ -194,3 +194,5 @@ For most rules, see [`ci.js`](./ci.js).
 [semantic-release]:       https://github.com/semantic-release/semantic-release
 [npm-url]:                https://npmjs.org/package/@terminus/tslint-config-frontend
 [license-url]:            https://github.com/GetTerminus/tslint-config-frontend/blob/release/LICENSE
+[greenkeeper-badge]:      https://badges.greenkeeper.io/GetTerminus/tslint-config-frontend.svg
+[greenkeeper-url]:        https://greenkeeper.io/
